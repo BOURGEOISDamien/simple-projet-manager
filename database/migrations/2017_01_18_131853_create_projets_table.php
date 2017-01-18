@@ -19,6 +19,8 @@ class CreateProjetsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->string('inviteURL')->unique();
+            //tmp salt = a"(MLzkvy*
+            // bcrypt($projet->title.$salt.$projet->user_id.$salt.$projet->id);
             $table->timestamps();
         });
     }

@@ -9,6 +9,18 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // Un utilisateur possède plusieurs projets
+    public function projets()
+    {
+      return $this->hasMany(Projet::class);
+    }
+
+    // Un utilisateur possède plusieurs utilisateurs ayant joint celui-ci
+    public function joined_projects()
+    {
+      return $this->hasMany(ProjetUsers::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
