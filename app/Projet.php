@@ -18,10 +18,10 @@ class Projet extends Model
         return $this->belongsTo(User::class);
     }
 
-    // Un projet comprend un à plusieurs utilisateurs
-    public function joined_users()
+
+    public function participating_users()
     {
-        return $this->hasMany(ProjetUsers::class);
+        return $this->belongsToMany(User::class, 'projet_users');
     }
 
 }

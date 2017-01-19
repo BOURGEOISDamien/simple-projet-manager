@@ -15,10 +15,21 @@ class User extends Authenticatable
       return $this->hasMany(Projet::class);
     }
 
+    // Un utilisateur possède plusieurs tâches
+    public function taches()
+    {
+      return $this->hasMany(Tache::class);
+    }
+
     // Un utilisateur possède plusieurs utilisateurs ayant joint celui-ci
+    // public function joined_projects()
+    // {
+    //   return $this->hasMany(ProjetUsers::class);
+    // }
+
     public function joined_projects()
     {
-      return $this->hasMany(ProjetUsers::class);
+      return $this->belongsToMany(Project::class, 'projet_users');
     }
 
     /**

@@ -6,7 +6,6 @@ namespace App;
 
 $user = new User;
 $user->id = 1;
-$user->name = 'Damien BOURGEOIS';
 $user->username = 'DamienBRGEOIS';
 $user->password = bcrypt('password');
 $user->email="bourgeois.damien@outlook.fr";
@@ -15,7 +14,6 @@ $user->save();
 
 $user = new User;
 $user->id = 2;
-$user->name = 'Didier GERARD';
 $user->username = 'DidierGERARD';
 $user->password = bcrypt('password');
 $user->email="gerard.didier@outlook.fr";
@@ -24,7 +22,6 @@ $user->save();
 
 $user = new User;
 $user->id = 3;
-$user->name = 'Anais LEFEVRE';
 $user->username = 'AnaisLEFEVRE';
 $user->password = bcrypt('password');
 $user->email="lefevre.anais@outlook.fr";
@@ -33,7 +30,6 @@ $user->save();
 
 $user = new User;
 $user->id = 4;
-$user->name = 'Valentine BENY';
 $user->username = 'ValentineBENY';
 $user->password = bcrypt('password');
 $user->email="beny.valentine@outlook.fr";

@@ -7692,4 +7692,36 @@ button.close {
   font-weight: bold;
 }
 
+.clickable-item {
+  color: #636b6f;
+}
+
+.clickable-item:hover, .clickable-item:visited, .clickable-item:active {
+  text-decoration: none;
+  color: #636b6f;
+}
+
+.links {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site_title {
+  color: #636b6f;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.usertag {
+  color: #3398e3;
+}
+
 /*# sourceMappingURL=app.css.map */

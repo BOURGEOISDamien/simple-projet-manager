@@ -36,7 +36,7 @@ class HomeController extends Controller
         // On récupère tous les projets qui ont l'utilisateur dont l'id
         // correspond à celui de l'utilisateur de la session active comme utilisateur
         // ayant joint le projet
-        $joined_projects = Projet::whereHas('joined_users', function($query){
+        $joined_projects = Projet::whereHas('participating_users', function($query){
             $query->where('user_id','=',Auth::user()->id);
         })->get();
 
