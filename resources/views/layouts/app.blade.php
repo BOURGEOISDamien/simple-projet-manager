@@ -8,6 +8,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -89,5 +91,37 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/sweetalert.min.js"></script>
+
+
+    @if (Session::has('alert-title'))
+       <script type="text/javascript">
+
+           swal({
+                  title: "{{Session::get('alert-title')}}",
+                  text: "{{Session::get('alert-content')}}",
+                  type: "{{Session::get('alert-type')}}",
+
+                  @if(Session::get('alert-timer') != null)
+                        timer: {{Session::get('alert-timer')}},
+                        showConfirmButton: false,
+                  @else
+                         @if(Session::get('alert-confirm'))
+                            showConfirmButton: true,
+                            confirmButtonText: "{{Session::get('alert-confirm-text')}}",
+                            closeOnConfirm: true,
+                          @endif
+                  @endif
+
+                  @if(Session::get('alert-cancel'))
+                      showCancelButton : "{{Session::get('alert-cancel')}}",
+                      closeOnCancel: false,
+                  @endif
+                  html:true,
+
+                });
+        </script>
+    @endif
+    
 </body>
 </html>

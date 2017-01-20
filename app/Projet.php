@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Projet extends Model
 {
+
     // Un projet comprend un à plusieurs tâches
     public function taches()
     {
@@ -23,5 +24,6 @@ class Projet extends Model
     {
         return $this->belongsToMany(User::class, 'projet_users');
     }
+
 
 }

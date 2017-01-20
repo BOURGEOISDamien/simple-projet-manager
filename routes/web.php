@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('projet/{projet}', 'ProjetController@show');
+Route::get('join/{token}', 'ProjetController@join');
+

@@ -40,14 +40,14 @@ $projet = new Projet;
 $projet->id = 1;
 $projet->user_id=1;
 $projet->title="Développement d'un site web sous Laravel 5";
-$projet->inviteURL = bcrypt('12345');
+$projet->inviteURL = bin2hex(random_bytes(5));
 $projet->save();
 
 $projet = new Projet;
 $projet->id = 2;
 $projet->user_id=3;
 $projet->title="Développement d'une API CSS & JavaScript";
-$projet->inviteURL = bcrypt('678910');
+$projet->inviteURL = bin2hex(random_bytes(5));
 $projet->save();
 
 $tache = new Tache;
@@ -104,22 +104,3 @@ $tache->body="Créer une maquette papier representant chacun des éléments ains
 $tache->done=false;
 $tache->save();
 
-$projetusers = new ProjetUsers;
-$projetusers->projet_id=1;
-$projetusers->user_id=3;
-$projetusers->save();
-
-$projetusers = new ProjetUsers;
-$projetusers->projet_id=1;
-$projetusers->user_id=4;
-$projetusers->save();
-
-$projetusers = new ProjetUsers;
-$projetusers->projet_id=2;
-$projetusers->user_id=1;
-$projetusers->save();
-
-$projetusers = new ProjetUsers;
-$projetusers->projet_id=2;
-$projetusers->user_id=2;
-$projetusers->save();
