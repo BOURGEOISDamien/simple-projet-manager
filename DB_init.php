@@ -36,6 +36,14 @@ $user->email="beny.valentine@outlook.fr";
 $user->isAdmin = false;
 $user->save();
 
+$user = new User;
+$user->id = 5;
+$user->username = 'RaphaelBRGEOIS';
+$user->password = bcrypt('password');
+$user->email="bourgeois.raphael@outlook.fr";
+$user->isAdmin = false;
+$user->save();
+
 $projet = new Projet;
 $projet->id = 1;
 $projet->user_id=1;
@@ -83,7 +91,7 @@ $tache->user_id=4;
 $tache->projet_id=2;
 $tache->title="Définir une charte graphique";
 $tache->body="Déterminer une charte graphique que tous les composants de l'API devront respecter.";
-$tache->done=false;
+$tache->done=true;
 $tache->save();
 
 $tache = new Tache;
@@ -92,7 +100,7 @@ $tache->user_id=2;
 $tache->projet_id=2;
 $tache->title="Déterminer un nom pour l'API";
 $tache->body="Déterminer un nom court, facilement mémorable correspondant avec l'esprit de l'API.";
-$tache->done=false;
+$tache->done=true;
 $tache->save();
 
 $tache = new Tache;
@@ -101,6 +109,6 @@ $tache->user_id=3;
 $tache->projet_id=2;
 $tache->title="Créer une maquette papier";
 $tache->body="Créer une maquette papier representant chacun des éléments ainsi que leurs design & fonctionnalités.";
-$tache->done=false;
+$tache->done=true;
 $tache->save();
 

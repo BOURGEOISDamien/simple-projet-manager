@@ -13,6 +13,12 @@ class Projet extends Model
         return $this->hasMany(Tache::class);
     }
 
+     // Un projet comprend un à plusieurs tâches
+    public function tachesFinies()
+    {
+        return $this->hasMany(Tache::class)->where('done','=', true);
+    }
+
     // Un projet appartient à un utilisateur
     public function user()
     {
@@ -24,6 +30,8 @@ class Projet extends Model
     {
         return $this->belongsToMany(User::class, 'projet_users');
     }
+
+
 
 
 }

@@ -22,9 +22,17 @@
                       <a href="projet/{{$created_project->id}}"class="clickable-item">
                           <li class="list-group-item">
                             <span class="number_header">Projet #{{$created_project->id}}</span> ~
-                            {{ $created_project->title }}
                             <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
-                            <span class="badge" style="float:right; margin-right:15px; background-color:#1ec01e;">Terminé</span>
+
+                            {{ $created_project->title }}
+                           
+                            @if($created_project->taches()->count() == $created_project->tachesFinies()->count())
+                                <span class="badge" style="float:right; margin-right:15px; background-color:#1ec01e;">Terminé</span>
+                            @else
+                                 <span class="badge" style="float:right; margin-right:15px; background-color:orange;">En cours</span>
+                            @endif
+                            
+                            
                           </li>
                       </a>
                     @endforeach
@@ -48,7 +56,11 @@
                         <span class="number_header">Projet #{{$joined_project->id}}</span> ~
                         {{ $joined_project->title }}
                         <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
-                        <span class="badge" style="float:right; margin-right:15px; background-color:orange;">En cours</span>
+                          @if($joined_project->taches()->count() == $joined_project->tachesFinies()->count())
+                                <span class="badge" style="float:right; margin-right:15px; background-color:#1ec01e;">Terminé</span>
+                            @else
+                                 <span class="badge" style="float:right; margin-right:15px; background-color:orange;">En cours</span>
+                            @endif
                       </li>
                     @endforeach
 
