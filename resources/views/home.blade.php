@@ -4,6 +4,7 @@
 
 
 
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 ">
@@ -19,25 +20,37 @@
                 <div class="panel-body">
                   <ul  class="list-group">
                     @foreach($created_projects as $created_project)
-                      <a href="projet/{{$created_project->id}}"class="clickable-item">
+             
                           <li class="list-group-item">
-                            <span class="number_header">Projet #{{$created_project->id}}</span> ~
-                            <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
+                           <a href="projet/{{$created_project->id}}"class="clickable-item">
+                              <span class="number_header">Projet #{{$created_project->id}}</span> ~ 
+                                {{ $created_project->title }}
+                            </a>
 
-                            {{ $created_project->title }}
+                           <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
                            
-                            @if($created_project->taches()->count() == $created_project->tachesFinies()->count())
-                                <span class="badge" style="float:right; margin-right:15px; background-color:#1ec01e;">Terminé</span>
+                             @if($created_project->taches()->count() == $created_project->tachesFinies()->count())
+                                @if($created_project->taches()->count() == 0)
+                                   <span class="badge empty">Vide</span>
+                                @else
+                                   <span class="badge over">Terminé</span>
+                                @endif
                             @else
-                                 <span class="badge" style="float:right; margin-right:15px; background-color:orange;">En cours</span>
+                                 <span class="badge current">En cours</span>
                             @endif
                             
                             
                           </li>
-                      </a>
+               
                     @endforeach
 
                   </ul>
+                  <div class="row">
+                    <div class="col-md-10 col-md-offset-2">
+                         {{$created_projects->links()}}
+                    </div>
+                  </div>
+               
                 </div>
             </div>
 </div>
@@ -53,19 +66,30 @@
 
                     @foreach($joined_projects as $joined_project)
                       <li class="list-group-item">
+                       <a href="projet/{{$joined_project->id}}"class="clickable-item">
                         <span class="number_header">Projet #{{$joined_project->id}}</span> ~
                         {{ $joined_project->title }}
+                      </a>
                         <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
-                          @if($joined_project->taches()->count() == $joined_project->tachesFinies()->count())
-                                <span class="badge" style="float:right; margin-right:15px; background-color:#1ec01e;">Terminé</span>
+                           @if($joined_project->taches()->count() == $joined_project->tachesFinies()->count())
+                                @if($joined_project->taches()->count() == 0)
+                                   <span class="badge empty">Vide</span>
+                                @else
+                                   <span class="badge over">Terminé</span>
+                                @endif
                             @else
-                                 <span class="badge" style="float:right; margin-right:15px; background-color:orange;">En cours</span>
+                                 <span class="badge current">En cours</span>
                             @endif
                       </li>
                     @endforeach
 
                   </ul>
-
+                  <div class="row">
+                    <div class="col-md-10 col-md-offset-2">
+                         {{$joined_projects->links()}}
+                    </div>
+                  </div>
+                
 
                 </div>
             </div>

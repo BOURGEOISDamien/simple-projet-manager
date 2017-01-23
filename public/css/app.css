@@ -7724,4 +7724,93 @@ button.close {
   color: #3398e3;
 }
 
+.task {
+  color: #bdc6cb;
+}
+
+.task--done {
+  color: #1cc21c;
+}
+
+.creator {
+  background-color: #4d98d1;
+  color: #fff;
+}
+
+.creator .usertag {
+  color: #fff;
+  font-weight: bold;
+}
+
+.creator .badge {
+  background-color: #fff;
+  color: #4d98d1;
+}
+
+.custom-button {
+  color: #636b6f;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.custom-button:hover {
+  border-color: #4d98d1;
+  color: #fff;
+  background-color: #4d98d1;
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border: 1px solid #d3e0e9;
+}
+
+.pagination {
+  margin: 0px;
+}
+
+.beta {
+  background-color: #A8A6A6;
+  margin-top: 1.25em;
+  margin-left: -0.8em;
+}
+
+.list-group-item > .badge {
+  float: right;
+  margin-right: 15px;
+}
+
+.list-group-item > .empty {
+  background-color: #d1cdcd;
+  margin-right: 22px;
+}
+
+.list-group-item > .over {
+  background-color: #1ec01e;
+}
+
+.list-group-item > .current {
+  background-color: orange;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  background-color: #fff;
+  color: #636b6f;
+  border: 1px solid #ddd;
+  border-bottom: 2px solid #636b6f;
+}
+
+.pagination > li > a {
+  color: #636b6f;
+}
+
+a {
+  color: #636b6f;
+}
+
+#app > .container > .row {
+  min-height: 500px;
+}
+
 /*# sourceMappingURL=app.css.map */

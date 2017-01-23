@@ -18,7 +18,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => $password ?: $password = bcrypt('password'),
         'remember_token' => str_random(10),
+    ];
+});
+
+
+$factory->define(App\Projet::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'user_id' => 1,
+        'title' => $faker->unique()->text($maxNbChars = 35),
+        'inviteURL' => bin2hex(random_bytes(5))
     ];
 });

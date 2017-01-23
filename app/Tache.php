@@ -18,4 +18,10 @@ class Tache extends Model
       return $this->belongsTo(Projet::class);
     }
 
+    public function toggleDone()
+    {
+        $this->done = !($this->done);
+        $this->save();
+    }
+
 }

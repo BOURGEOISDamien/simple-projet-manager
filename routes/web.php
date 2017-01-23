@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +16,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+  
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::get('projet/{projet}', 'ProjetController@show');
+Route::get('/dashboard', 'DashboardController@index'); // Change dashboard
+Route::get('projet/{projet}', 'ProjetController@show')->middleware('projet-access');
 Route::get('join/{token}', 'ProjetController@join');
-
+Route::get('tache/{tache}/toggle', 'TacheController@toggle')->middleware('projet-access');

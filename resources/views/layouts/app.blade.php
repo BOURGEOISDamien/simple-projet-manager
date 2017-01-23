@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Simple Project Manager') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -43,9 +43,10 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand site_title" href="{{ url('/home') }}">
+                    <a class="navbar-brand site_title" href="{{ url('/dashboard') }}">
                         {{ config('app.name', 'Simple Projet Manager') }}
                     </a>
+                    <span class="badge beta">Beta</span>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -68,6 +69,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="{{ url('/dashboard') }}">Dashboard</a>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -87,7 +89,13 @@
         </nav>
 
         @yield('content')
+
+        <footer class="footer">
+            
+            
+        </footer>
     </div>
+
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>

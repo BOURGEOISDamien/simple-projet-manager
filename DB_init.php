@@ -95,6 +95,15 @@ $tache->done=true;
 $tache->save();
 
 $tache = new Tache;
+$tache->id=7;
+$tache->user_id=1;
+$tache->projet_id=2;
+$tache->title="Appliquer la charte graphique";
+$tache->body="Appliquer la charte graphique pour tous les composants de l'API.";
+$tache->done=true;
+$tache->save();
+
+$tache = new Tache;
 $tache->id=5;
 $tache->user_id=2;
 $tache->projet_id=2;
