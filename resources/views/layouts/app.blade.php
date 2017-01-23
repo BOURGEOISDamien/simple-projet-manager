@@ -98,6 +98,14 @@
 
 
     <!-- Scripts -->
+    <script
+            src="http://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous
+    "></script>
+        
+    @yield('scripts')
+
     <script src="/js/app.js"></script>
     <script src="/js/sweetalert.min.js"></script>
 

@@ -13,8 +13,8 @@
                     </button>
                 </div>
  
-                <div class="panel-body">
-                  <ul  class="list-group">
+                <div class="panel-body" >
+                  <ul  class="list-group" id="draggable-items">
                     @foreach($projet->taches as $tache)
 
                           <li class="list-group-item">
@@ -95,4 +95,31 @@
 
   </div>
 </div>
+@endsection
+
+@section('scripts')
+
+<script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+
+ <script>jQuery(function($) {
+        var panelList = $('#draggable-items');
+
+        panelList.sortable({
+            // Only make the .panel-heading child elements support dragging.
+            // Omit this to make then entire <li>...</li> draggable.
+            // handle: '.glyphicon-option-horizontal', 
+            update: function() {
+                $('.list-group-item', panelList).each(function(index, elem) {
+                     var $listItem = $(elem),
+                         newIndex = $listItem.index();
+                    // TODO : Mise à jour de l'ordre des taches en AJAX
+                });
+            }
+        });
+    });
+    </script>
+
 @endsection
