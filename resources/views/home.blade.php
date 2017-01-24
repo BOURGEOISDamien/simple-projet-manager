@@ -34,6 +34,7 @@
                               <ul class="dropdown-menu">
                                 <li><a href="#">Modifier</a></li>
                                 <li><a href="/projet/{{$created_project->id}}/delete">Supprimer</a></li>
+                                 <li><a href="#">Inviter un membre</a></li>
                               </ul>
 
                             </div>

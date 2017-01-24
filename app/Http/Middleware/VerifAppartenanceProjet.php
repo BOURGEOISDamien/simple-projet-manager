@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use Auth;
+use Closure;
 
 class VerifAppartenanceProjet
 {
@@ -17,34 +17,28 @@ class VerifAppartenanceProjet
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
+
+        if($request->tache)
+        {
+            $tache  = $request->tache;
+            $projet = $tache->projet()->first();
+        }
+
         if($request->projet)
         {
             $projet = $request->projet;
-        
-            if($projet->user == $user)
-            {
-                return $next($request);
-            }
-            else
-            {
-                 if($projet->participating_users()->find($user->id))
-                 {
-                    return $next($request);
-                 }
-                 else
-                 {
-                     abort('403', 'Not alllowed !');
-                 }
-            }
+        }
 
-        }
-        else
+        // DEBUG : 
+        // die('hascreated : '. $user->hasCreated($projet). ' / '.'hasjoined : '. $user->hasJoined($projet));
+        
+        if($user->hasCreated($projet) || $user->hasJoined($projet))
         {
-            if($request->tache)
-            {
-                return $next($request);
-                // TODO : test si tache fait partie d'un projet accessible par l'utilisateur
-            }
+             return $next($request);
         }
+
+        abort('403', 'Not allowed !');
+
+
     }
 }

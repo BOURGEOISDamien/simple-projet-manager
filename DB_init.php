@@ -121,6 +121,6 @@ $tache->body="Créer une maquette papier representant chacun des éléments ains
 $tache->done=true;
 $tache->save();
 
-factory('App\Projet',50)->create()
+factory('App\Projet',15)->create()
 
 

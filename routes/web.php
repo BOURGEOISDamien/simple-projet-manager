@@ -21,12 +21,18 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index'); 
 
-Route::get('projet/{projet}', 'ProjetController@show')->middleware('projet-access');
-Route::get('projet/{projet}/delete', 'ProjetController@delete')->middleware('projet-access');
-Route::get('projet/{projet}/quit', 'ProjetController@quit')->middleware('projet-access');
 
-Route::get('join/{token}', 'ProjetController@join');
+Route::group(['middleware' => ['projet-access']], function () {
 
-Route::get('tache/{tache}/toggle', 'TacheController@toggle')->middleware('projet-access');
-Route::get('tache/{tache}/delete', 'TacheController@delete')->middleware('projet-access');
-Route::get('tache/{tache}/Modifier', 'TacheController@modifier')->middleware('projet-access');
+    Route::get('projet/{projet}', 'ProjetController@show');
+	Route::get('projet/{projet}/delete', 'ProjetController@delete');
+	Route::get('projet/{projet}/quit', 'ProjetController@quit');
+
+	Route::get('tache/{tache}/toggle', 'TacheController@toggle');
+	Route::get('tache/{tache}/delete', 'TacheController@delete');
+	Route::get('tache/{tache}/Modifier', 'TacheController@modifier');
+
+});
+
+
+Route::get('join/{token}', 'ProjetController@join')->middleware('projet-join');

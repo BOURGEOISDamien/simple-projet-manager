@@ -32,6 +32,17 @@ class User extends Authenticatable
       return $this->belongsToMany(Projet::class, 'projet_users');
     }
 
+
+    public function hasJoined(Projet $projet)
+    {
+        return $projet->participating_users()->find($this->id);
+    }
+
+    public function hasCreated(Projet $projet)
+    {
+        return $this->projets()->find($projet->id);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
