@@ -19,9 +19,14 @@ Route::get('/', function () {
   
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index'); // Change dashboard
+Route::get('/dashboard', 'DashboardController@index'); 
+
 Route::get('projet/{projet}', 'ProjetController@show')->middleware('projet-access');
+Route::get('projet/{projet}/delete', 'ProjetController@delete')->middleware('projet-access');
+Route::get('projet/{projet}/quit', 'ProjetController@quit')->middleware('projet-access');
+
 Route::get('join/{token}', 'ProjetController@join');
+
 Route::get('tache/{tache}/toggle', 'TacheController@toggle')->middleware('projet-access');
 Route::get('tache/{tache}/delete', 'TacheController@delete')->middleware('projet-access');
 Route::get('tache/{tache}/Modifier', 'TacheController@modifier')->middleware('projet-access');

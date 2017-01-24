@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function joined_projects()
     {
-      return $this->belongsToMany(Project::class, 'projet_users');
+      return $this->belongsToMany(Projet::class, 'projet_users');
     }
 
     /**

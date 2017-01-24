@@ -49,4 +49,20 @@ class ProjetController extends Controller
     }
   }
 
+  public function delete(Projet $projet)
+  {
+      $projet->delete();
+      simple_alert('Opération réussie', 'Le projet à bien été supprimé', 'success',1500);     
+      return back();
+
+  }
+
+  public function quit(Projet $projet)
+  {
+      $projet->remove_joined_user(Auth::user());
+      simple_alert('Opération réussie', 'Vous avez bien quitté le projet séléctionné', 'success',1500);     
+      return back();
+
+  }
+
 }

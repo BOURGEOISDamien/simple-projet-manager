@@ -27,7 +27,16 @@
                                 {{ $created_project->title }}
                             </a>
 
-                           <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
+                          <div class="btn-group" style="float:right; position:relative; display:inline-block;">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Modifier</a></li>
+                                <li><a href="/projet/{{$created_project->id}}/delete">Supprimer</a></li>
+                              </ul>
+
+                            </div>
                            
                              @if($created_project->taches()->count() == $created_project->tachesFinies()->count())
                                 @if($created_project->taches()->count() == 0)
@@ -70,7 +79,18 @@
                         <span class="number_header">Projet #{{$joined_project->id}}</span> ~
                         {{ $joined_project->title }}
                       </a>
-                        <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
+                       
+                        <div class="btn-group" style="float:right; position:relative; display:inline-block;">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Inviter un membre</a></li>
+                                <li><a href="/projet/{{$joined_project->id}}/quit">Quitter le projet</a></li>
+                              </ul>
+
+                            </div>
+
                            @if($joined_project->taches()->count() == $joined_project->tachesFinies()->count())
                                 @if($joined_project->taches()->count() == 0)
                                    <span class="badge empty">Vide</span>

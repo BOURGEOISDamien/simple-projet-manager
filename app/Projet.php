@@ -31,6 +31,11 @@ class Projet extends Model
         return $this->belongsToMany(User::class, 'projet_users');
     }
 
+    public function remove_joined_user(User $user)
+    {
+        return $this->participating_users()->detach($user->id);
+    }
+
 
 
 
