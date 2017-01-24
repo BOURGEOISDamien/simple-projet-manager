@@ -13,7 +13,13 @@ class TacheController extends Controller
    		$tache->toggleDone();
    		simple_alert('Opération réussie', 'Le statut de la tâche à bien été mis à jour', 'success',1500);   	
    		return back();
-   		// TODO : notification
    		
+   }
+
+   public function delete(Tache $tache)	
+   {
+   		$tache->delete();
+   		simple_alert('Opération réussie', 'La tâche à bien été suprimée', 'success',1500);
+   		return back();
    }
 }

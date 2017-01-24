@@ -73,21 +73,6 @@ $admin-color:rgb(77, 152, 209);
   color: $admin-color;
 }
 
-.custom-button
-{
-  color: #636b6f;
-  background-color: #fff;
-  border-color: #ccc;
-
-}
-
-.custom-button:hover
-{
-  border-color:$admin-color;
-  color:#fff;
-  background-color:$admin-color;
-}
-
 .footer
 {
   width: 100%;
@@ -157,4 +142,14 @@ a
 .list-group-item
 {
   cursor:pointer;
+}
+
+.dropdown-toggle
+{
+  border:none;
+}
+
+.dropdown-toggle:hover, .dropdown-toggle:focus, .dropdown-toggle:active
+{
+  background-color:#fff;
 }

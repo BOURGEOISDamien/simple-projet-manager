@@ -33,7 +33,7 @@ class VerifAppartenanceProjet
                  }
                  else
                  {
-                     abort('404', 'Lost ?');
+                     abort('403', 'Not alllowed !');
                  }
             }
 

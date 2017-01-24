@@ -23,3 +23,5 @@ Route::get('/dashboard', 'DashboardController@index'); // Change dashboard
 Route::get('projet/{projet}', 'ProjetController@show')->middleware('projet-access');
 Route::get('join/{token}', 'ProjetController@join');
 Route::get('tache/{tache}/toggle', 'TacheController@toggle')->middleware('projet-access');
+Route::get('tache/{tache}/delete', 'TacheController@delete')->middleware('projet-access');
+Route::get('tache/{tache}/Modifier', 'TacheController@modifier')->middleware('projet-access');

@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <span class="" style="font-size:1.8rem;">Projet #{{ $projet->id }} ~ {{ $projet->title }}</span>
-                    <button type="button" class="btn custom-button" style="float:right; padding:3px 12px !important;" name="button">
+                    <button type="button" class="btn btn-default" style="float:right; padding:3px 12px !important;" name="button">
                         Ajouter
                     </button>
                 </div>
@@ -18,20 +18,33 @@
                     @foreach($projet->taches as $tache)
 
                           <li class="list-group-item">
-                            <div class="task-display" style="position:relative; display:inline-block; width:72%;">
+                            <div class="task-display" style="position:relative; display:inline-block; width:70%;">
                               <span class="number_header">Tache #{{$projet->taches->search($tache)+1}}</span> ~ {{ $tache->title }}
                             </div>
                             <div class="usertag" style="position:relative;display:inline-block;">{{'@'.$tache->user->username}}</div>
-                            <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
-                            <a href="{{URL::to('/')}}/tache/{{$tache->id}}/toggle">
+
+                           <div class="btn-group" style="float:right; position:relative; display:inline-block;">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true" style="float:right;"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Modifier</a></li>
+                                <li><a href="/tache/{{$tache->id}}/delete">Supprimer</a></li>
+                              </ul>
+
+                            </div>
+
+                          <a href="{{URL::to('/')}}/tache/{{$tache->id}}/toggle">
                               <span class="glyphicon glyphicon-ok
                               @if($tache->done)
                                   task--done
                               @else
                                   task
                               @endif
-                              " aria-hidden="true" style="float:right; margin-right:20px;"></span>
+                              " aria-hidden="true" style="float:right; margin-right:12.5px;"></span>
                             </a>
+
+                             
                           </li>
                       
 
@@ -45,7 +58,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <span class="" style="font-size:1.8rem;">Participants</span>
-                    <button type="button" data-toggle="modal" data-target="#invitation" class="btn custom-button" style="float:right; padding:3px 12px !important;" name="button">
+                    <button type="button" data-toggle="modal" data-target="#invitation" class="btn btn-default" style="float:right; padding:3px 12px !important;" name="button">
                         Inviter
                     </button>
                 </div>
