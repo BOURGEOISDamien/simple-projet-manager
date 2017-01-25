@@ -48,6 +48,7 @@ $projet = new Projet;
 $projet->id = 1;
 $projet->user_id=1;
 $projet->title="Développement d'un site web sous Laravel 5";
+$projet->isPrivate = true;
 $projet->inviteURL = bin2hex(random_bytes(5));
 $projet->save();
 
@@ -55,6 +56,7 @@ $projet = new Projet;
 $projet->id = 2;
 $projet->user_id=3;
 $projet->title="Développement d'une API CSS & JavaScript";
+$projet->isPrivate = false;
 $projet->inviteURL = bin2hex(random_bytes(5));
 $projet->save();
 

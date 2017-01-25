@@ -54,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'projet-access' => \App\Http\Middleware\VerifAppartenanceProjet::class,
         'projet-join' => \App\Http\Middleware\VerifCanJoinProjet::class,
+        'projet-isPublic' => \App\Http\Middleware\VerifProjetIsPublic::class,
     ];
 }

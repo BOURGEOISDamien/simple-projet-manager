@@ -2,10 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Auth;
 use Closure;
+use Auth;
 
-class VerifAppartenanceProjet
+class VerifProjetIsPublic
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,8 @@ class VerifAppartenanceProjet
      */
     public function handle($request, Closure $next)
     {
-        $user = Auth::user();
+
+       $user = Auth::user();
 
         if($request->tache)
         {
@@ -28,16 +29,17 @@ class VerifAppartenanceProjet
         {
             $projet = $request->projet;
         }
-
-
         
         if($user->worksIn($projet))
         {
              return $next($request);
         }
 
+        if(!($projet->isPrivate))
+        {
+             return $next($request);
+        }
+        
         abort('403', 'Not allowed !');
-
-
     }
 }

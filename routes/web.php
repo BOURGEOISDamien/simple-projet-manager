@@ -13,20 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
   
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index'); 
+Route::get('/', 'DashboardController@index'); 
 
 
 Route::group(['middleware' => ['projet-access']], function () {
 
-    Route::get('projet/{projet}', 'ProjetController@show');
-	Route::get('projet/{projet}/delete', 'ProjetController@delete');
+ 	Route::get('projet/{projet}/delete', 'ProjetController@delete');
 	Route::get('projet/{projet}/quit', 'ProjetController@quit');
+
 
 	Route::get('tache/{tache}/toggle', 'TacheController@toggle');
 	Route::get('tache/{tache}/delete', 'TacheController@delete');
@@ -34,5 +34,7 @@ Route::group(['middleware' => ['projet-access']], function () {
 
 });
 
+Route::post('projet/changeOrder', 'ProjetController@changeOrder');
 
+Route::get('projet/{projet}', 'ProjetController@show')->middleware('projet-isPublic');
 Route::get('join/{token}', 'ProjetController@join')->middleware('projet-join');

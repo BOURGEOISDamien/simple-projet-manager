@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use Auth;
 use App\User;
+use App\Tache;
 use App\Projet;
 use Illuminate\Http\Request;
-use Auth;
 
 class ProjetController extends Controller
 {
@@ -63,6 +64,19 @@ class ProjetController extends Controller
       simple_alert('Opération réussie', 'Vous avez bien quitté le projet séléctionné', 'success',1500);     
       return back();
 
+  }
+
+  public function changeOrder(Request $request)
+  {
+    if($request->ajax()){
+      // change order
+      $id = $request->id;
+      $position = $request->position;
+      $tache = Tache::find($id);
+      $tache->position = $position;
+      $tache->save();
+      return 'switch made';
+    }
   }
 
 }

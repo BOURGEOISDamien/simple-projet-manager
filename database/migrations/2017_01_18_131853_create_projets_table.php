@@ -18,6 +18,7 @@ class CreateProjetsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
+            $table->boolean('isPrivate');
             $table->string('inviteURL')->unique();
             //tmp salt = a"(MLzkvy*
             // bcrypt($projet->title.$salt.$projet->user_id.$salt.$projet->id);

@@ -42,6 +42,16 @@ class User extends Authenticatable
     {
         return $this->projets()->find($projet->id);
     }
+    
+    public function worksIn(Projet $projet)
+    {
+      if($this->hasCreated($projet) || $this->hasJoined($projet))
+      {
+          return true;
+      }
+
+      return false;
+    }
 
     /**
      * The attributes that are mass assignable.

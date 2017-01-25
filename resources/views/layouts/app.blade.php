@@ -43,7 +43,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand site_title" href="{{ url('/dashboard') }}">
+                    <a class="navbar-brand site_title" href="{{ url('/') }}">
                         {{ config('app.name', 'Simple Projet Manager') }}
                     </a>
                     <span class="badge beta">Beta</span>
@@ -69,7 +69,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                                        <a href="{{ url('/') }}">Dashboard</a>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -108,6 +108,8 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/sweetalert.min.js"></script>
+    <script src="https://use.fontawesome.com/f3d36b7972.js"></script>
+
 
 
     @if (Session::has('alert-title'))

@@ -20,6 +20,7 @@ class CreateTachesTable extends Migration
             $table->string('title');
             $table->string('body');
             $table->boolean('done');
+            $table->integer('position')->default(0);;
             $table->timestamps();
         });
     }

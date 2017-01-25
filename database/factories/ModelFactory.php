@@ -30,6 +30,7 @@ $factory->define(App\Projet::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'title' => $faker->unique()->text($maxNbChars = 35),
+        'isPrivate' => $faker->boolean($chanceOfGettingTrue = 50),
         'inviteURL' => bin2hex(random_bytes(5))
     ];
 });

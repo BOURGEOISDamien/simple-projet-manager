@@ -53,7 +53,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">You're not allowed to access this page</div>
-                <div class="subtitle"> <a href="/dashboard">Get me back home</a></div>
+                <div class="subtitle"> <a href="/">Get me back home</a></div>
 
 
             </div>
