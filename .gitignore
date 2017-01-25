@@ -11,5 +11,8 @@ bootstrap/cache/
 .env.php
 .env
 
+#Private Tokens (social networks)
+config/services.php
+
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/

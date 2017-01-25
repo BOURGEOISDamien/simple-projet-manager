@@ -46,7 +46,7 @@ class ProjetController extends Controller
        // pop up -> erreurr
       simple_alert('Erreur', 'Le lien d\'invitation ne correspond à aucun projet.','error',3000);
       //redirection acceuil
-       return redirect('home');
+       return redirect('/');
     }
   }
 

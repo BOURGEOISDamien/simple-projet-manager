@@ -7822,4 +7822,57 @@ a {
   font-size: 20px !important;
 }
 
+.social > a:hover {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.social_link--facebook {
+  text-align: center;
+  display: block;
+  border: 1px solid #3b5999;
+  border-radius: 10px;
+  padding: 10px 0;
+  background-color: #3b5999;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.social_link--twitter {
+  text-align: center;
+  display: block;
+  border: 1px solid #3db1d1;
+  border-radius: 10px;
+  padding: 10px 0;
+  background-color: #3db1d1;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.social_link--google {
+  text-align: center;
+  display: block;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 10px 0;
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.social_link--github {
+  text-align: center;
+  display: block;
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 10px 0;
+  background-color: #3b5999;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 /*# sourceMappingURL=app.css.map */

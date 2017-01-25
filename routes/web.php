@@ -38,3 +38,7 @@ Route::post('projet/changeOrder', 'ProjetController@changeOrder');
 
 Route::get('projet/{projet}', 'ProjetController@show')->middleware('projet-isPublic');
 Route::get('join/{token}', 'ProjetController@join')->middleware('projet-join');
+
+Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
+

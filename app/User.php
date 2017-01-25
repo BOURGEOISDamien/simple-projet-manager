@@ -53,6 +53,11 @@ class User extends Authenticatable
       return false;
     }
 
+    public function socialProviders()
+    {
+      return $this->hasMany(SocialProvider::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

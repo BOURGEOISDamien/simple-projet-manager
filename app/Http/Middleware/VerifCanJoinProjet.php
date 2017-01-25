@@ -30,7 +30,7 @@ class VerifCanJoinProjet
         }
 
         simple_alert('Erreur', 'Impossible de rejoindre ce projet car vous en fait déjà partie', 'error',1500);       
-        return Redirect::to('/dashboard');
+        return Redirect::to('/');
 
 
     }

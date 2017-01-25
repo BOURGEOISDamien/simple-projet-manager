@@ -59,6 +59,34 @@
                                 </a>
                             </div>
                         </div>
+                        <hr>
+                        <center>OU</center>
+                        <div class="row" style="margin-top:15px;">
+                            
+                            <div class="col-md-3">
+                                <a href="/auth/facebook" class="social_link--facebook">
+                                    <i class="fa fa-facebook social" aria-hidden="true"></i>
+                                </a>
+                            </div>   
+
+                            <div class="col-md-3">
+                                <a href="/auth/twitter" class="social_link--twitter">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </div>   
+
+                            <div class="col-md-3">
+                                <a href="/auth/google" class="social_link--google">
+                                    <i class="fa fa-google" aria-hidden="true"></i>
+                                </a>
+                            </div>    
+
+                            <div class="col-md-3">
+                                <a href="/auth/github" class="social_link--github">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
+                            </div>      
+                        </div>
                     </form>
                 </div>
             </div>

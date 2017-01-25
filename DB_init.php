@@ -65,51 +65,57 @@ $tache->id=1;
 $tache->user_id=1;
 $tache->projet_id=1;
 $tache->title="Apprendre à utiliser Laravel 5";
+$tache->position=1;
 $tache->body="Visionner tous les tutoriels sur Laracast.com concernaant Laracast 5.";
 $tache->done=false;
 $tache->save();
 
 $tache = new Tache;
 $tache->id=2;
-$tache->user_id=3;
+$tache->user_id=1;
 $tache->projet_id=1;
 $tache->title="Définir une structure de donées";
+$tache->position=2;
 $tache->body="Déterminer une structure de données permettant de repondre au cahier des charges établi.";
 $tache->done=false;
 $tache->save();
 
 $tache = new Tache;
 $tache->id=3;
-$tache->user_id=4;
+$tache->user_id=1;
 $tache->projet_id=1;
 $tache->title="Trouver un logo pour le site";
+$tache->position=3;
 $tache->body="Trouver un logo réprésentant le service proposé par le site ainsi que la marque.";
 $tache->done=false;
 $tache->save();
 
 $tache = new Tache;
 $tache->id=4;
-$tache->user_id=4;
+$tache->user_id=3;
 $tache->projet_id=2;
 $tache->title="Définir une charte graphique";
+$tache->position=1;
 $tache->body="Déterminer une charte graphique que tous les composants de l'API devront respecter.";
 $tache->done=true;
 $tache->save();
 
 $tache = new Tache;
 $tache->id=7;
-$tache->user_id=1;
+$tache->user_id=3;
 $tache->projet_id=2;
 $tache->title="Appliquer la charte graphique";
+$tache->position=2;
 $tache->body="Appliquer la charte graphique pour tous les composants de l'API.";
 $tache->done=true;
 $tache->save();
 
 $tache = new Tache;
 $tache->id=5;
-$tache->user_id=2;
+$tache->user_id=3;
 $tache->projet_id=2;
 $tache->title="Déterminer un nom pour l'API";
+$tache->position=3;
 $tache->body="Déterminer un nom court, facilement mémorable correspondant avec l'esprit de l'API.";
 $tache->done=true;
 $tache->save();
@@ -119,10 +125,11 @@ $tache->id=6;
 $tache->user_id=3;
 $tache->projet_id=2;
 $tache->title="Créer une maquette papier";
+$tache->position=4;
 $tache->body="Créer une maquette papier representant chacun des éléments ainsi que leurs design & fonctionnalités.";
 $tache->done=true;
 $tache->save();
 
-factory('App\Projet',15)->create()
+factory('App\Projet',1)->create()
 
 
