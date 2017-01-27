@@ -104,17 +104,31 @@ class RegisterController extends Controller
 
         if(!$socialProvider)
         {
-            $user = User::firstOrCreate(
+          
+
+              $user = User::firstOrCreate(
                     ['email' => $socialUser->getEmail()],
+                    ['username' => trim($socialUser->getName())],
                     ['name' => $socialUser->getName()]
                 );
-            $user->socialProviders()->create(
+
+              if(!$user->photo_path)
+              {
+                    $user->photo_path = $socialUser->getAvatar();
+                    $user->save();
+              }
+           
+
+               
+              $user->socialProviders()->create(
                     ['provider_id' => $socialUser->getId(), 'provider' => $provider]
-                );
+              );
         }
         else
         {
+
             $user = $socialProvider->user;
+           
         }
 
         auth()->login($user);

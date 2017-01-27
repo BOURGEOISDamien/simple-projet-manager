@@ -58,13 +58,14 @@ class User extends Authenticatable
       return $this->hasMany(SocialProvider::class);
     }
 
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username',
+        'name', 'email', 'password', 'username','photo_path'
     ];
 
     /**

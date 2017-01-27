@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class SocialProvider extends Model
@@ -10,6 +10,6 @@ class SocialProvider extends Model
 
    public function user()
    {
-   		$this->belongsTo(User::class);
+   		return $this->belongsTo(User::class);
    }
 }

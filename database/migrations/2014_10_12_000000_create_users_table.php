@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('isAdmin')->default(false);
+            $table->string('photo_path')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

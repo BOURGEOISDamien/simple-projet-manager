@@ -62,9 +62,14 @@
                             <li><a href="{{ url('/login') }}" class="links">Connexion</a></li>
                             <li><a href="{{ url('/register') }}" class="links">Inscription</a></li>
                         @else
+                             <span class="nav navbar-nav navbar"> 
+                                    <img src="{{Auth::user()->photo_path}}" style='border:1px solid orange; border-radius:50%; width:47px;margin-top:3px; background-color: {{ hexdec(md5(Auth::user()->email)) }} ' alt='photo de profile'>
+                            </span>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                    <!-- {{ Auth::user()->username }}  -->
+                                    <span class="caret"></span>
+
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
