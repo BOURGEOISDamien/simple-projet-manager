@@ -43,7 +43,13 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand site_title" href="{{ url('/') }}">
+                    <a class="navbar-brand site_title" 
+                    @if(Auth::check())
+                        href="{{ url('/') }}"
+                    @else
+                        href="{{ url('/home') }}"
+                    @endif
+                    >
                         {{ config('app.name', 'Simple Projet Manager') }}
                     </a>
                     <span class="badge beta">Beta</span>
